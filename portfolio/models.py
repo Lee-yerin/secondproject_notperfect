@@ -4,11 +4,12 @@ from django.utils import timezone
 # Create your models here.
 
 class Person(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='')
     name = models.CharField(max_length=100)
     major = models.CharField(max_length=100)
-    grade = models.TextField()
+    grade = models.TextField(max_length=100)
     hometown = models.CharField(max_length=100)
+    text = models.TextField(max_length=100, default = '')
     created_data = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
