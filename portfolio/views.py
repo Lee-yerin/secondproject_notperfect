@@ -9,7 +9,7 @@ def home(request):
     return render (request, 'portfolio/home.html', {'posts':posts})
 
 def detail(request, post_id):
-    post_detail = get_object_or_404(Post, pk = post_id)
+    post_detail = get_object_or_404(Person, pk = post_id)
     return render(request, 'portfolio/detail.html',{'post': post_detail})
 
 def post_new(request):
