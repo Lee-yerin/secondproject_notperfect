@@ -22,7 +22,7 @@ def post_new(request):
             return redirect('detail', post_id = post.pk)
     else:
         form = PostForm()
-        return render(request, 'portfolio/new.html',{'form':form})
+    return render(request, 'portfolio/new.html',{'form':form})
 
 def post_edit(request,post_id):
     post=get_object_or_404(Person,pk=post_id)
@@ -35,7 +35,7 @@ def post_edit(request,post_id):
             return redirect('detail',post_id=post.pk)
     else:
         form=PostForm(instance=post)
-    return render(request,'blog/edit.html',{'form':form})
+    return render(request,'portfolio/edit.html',{'form':form})
 
 def post_delete(request,post_id):
     post=get_object_or_404(Person,pk=post_id)
